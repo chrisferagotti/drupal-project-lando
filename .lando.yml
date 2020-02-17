@@ -1,7 +1,7 @@
 # TODO Fix PHPUnit testing of only custom themes/modules
 # TODO Mailhog setup
 # TODO Look into Portainer
-# TODO Look into traefik
+# TODO Look into traefik - I don't think this is necessary, as Lando handles what this would do
 
 name: drupal-site
 recipe: drupal8
@@ -19,7 +19,7 @@ config:
 services:
   database:
     type: mysql:5.7
-    portforward: 3310
+#    portforward: 3310
   pma:
     type: phpmyadmin
     hosts:
