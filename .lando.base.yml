@@ -1,0 +1,16 @@
+# Creating a new site? Copy this file into the root directory as .lando.base.yml and set the variables as desired
+# Things set in this file should probably not be overridden, ever, in your project's .lando.yml file.
+
+name: learn-drupal8
+
+proxy:
+  pma:
+    - db-learn-drupal8.lndo.site
+  mailhog:
+    - mail-learn-drupal8.lndo.site
+
+servies:
+  appserver:
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: "https://learn-drupal8.lndo.site"  # TODO This doesn't seem to be loading, so, for the time being, it'se set in .lando.yml

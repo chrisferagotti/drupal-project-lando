@@ -1,0 +1,19 @@
+# Creating a new site? Copy this file into the root directory as .lando.base.yml and set the variables as desired
+# Things set in this file should probably not be overridden, ever, in your project's .lando.yml file.
+
+# APP-NAME: The name of your app. It's the name used to create your Docker containers, and will be used when creating
+#           the URL for your site.
+
+name: APP-NAME
+
+proxy:
+  pma:
+    - db-APP-NAME.lndo.site
+  mailhog:
+    - mail-APP-NAME.lndo.site
+
+servies:
+  appserver:
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: "https://APP-NAME.lndo.site"  # TODO This doesn't seem to be loading, so, for the time being, it'se set in .lando.yml
